@@ -25,9 +25,10 @@ jobs:
         run: pnpm install
       
       - name: Build
-        run: pnpm astro build --config=astro.config.pages.mjs
+        run: pnpm build
         env:
           CHANNEL: wlopisthebest
+          SERVER_ADAPTER: cloudflare
           ASTRO_TELEMETRY_DISABLED: 1
           NODE_ENV: production
       
@@ -37,5 +38,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: telegram-wlopisthebest
-          directory: dist
+          directory: dist/_worker.js
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
