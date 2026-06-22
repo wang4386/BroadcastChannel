@@ -38,5 +38,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: telegram-wlopisthebest
-          directory: dist/_worker.js
+          directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
