@@ -15,6 +15,7 @@ const providers = {
     edgeMiddleware: false,
   }),
   cloudflare_workers: cloudflare(),
+  cloudflare_pages: cloudflare(),
   netlify: netlify({
     cacheOnDemandPages: false,
     edgeMiddleware: false,
@@ -29,7 +30,7 @@ const adapterAliases = {
   cloudflare: 'cloudflare_workers',
 }
 
-const unsupportedProviders = new Set(['cloudflare-pages', 'cloudflare_pages'])
+const unsupportedProviders = new Set([])
 
 const requestedProvider = (process.env.HOME === '/dev/shm/home' && process.env.TMPDIR === '/dev/shm/tmp')
   ? 'edgeone'
